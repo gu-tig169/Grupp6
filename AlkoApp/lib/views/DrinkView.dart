@@ -1,4 +1,3 @@
-import 'package:AlkoApp/DB/DB.dart';
 import 'package:AlkoApp/model/AlkoObject.dart';
 import 'package:AlkoApp/model/Model.dart';
 import 'package:flutter/material.dart';
