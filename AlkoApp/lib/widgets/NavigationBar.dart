@@ -2,7 +2,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'NavigationBarObject.dart';
+import 'package:AlkoApp/objects/NavigationBarObject.dart';
+
 
 class CustomNavigationBar extends StatelessWidget {
   final Color _mainColor = Colors.white;

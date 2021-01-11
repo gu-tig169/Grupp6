@@ -218,7 +218,6 @@ Widget _ingredientsWidget(
       ),
     ),
     for (var k in parameterList.keys)
-      //TODO eventuellt flytta hämta bild till model
       Container(
         alignment: Alignment.topLeft,
         child: ListTile(

@@ -59,6 +59,14 @@ class Model extends ChangeNotifier {
     return obj;
   }
 
+  void randomDrink() async {
+    _isLoading = true;
+    notifyListeners();
+    _randomList = await CocktailDB.getRandomDrink();
+    _isLoading = false;
+    notifyListeners();
+  }
+
   //Mappar ingredienser och measure, används i drinkview & createdrinkcontainer
   Map getDrinkIngredientList(AlkoObject drink) {
     Map<String, String> parameterList = {
@@ -88,14 +96,6 @@ class Model extends ChangeNotifier {
       textColor: Colors.black,
       fontSize: 20.0,
     );
-  }
-
-  void randomDrink() async {
-    _isLoading = true;
-    notifyListeners();
-    _randomList = await CocktailDB.getRandomDrink();
-    _isLoading = false;
-    notifyListeners();
   }
 
   void setIconColor(item) {
