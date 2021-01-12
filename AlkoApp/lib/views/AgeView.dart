@@ -21,7 +21,6 @@ class AgeView extends StatelessWidget {
           child: Container(
             height: MediaQuery.of(context).size.height * 0.75,
             width: MediaQuery.of(context).size.width * 0.9,
-            //padding: EdgeInsets.symmetric(horizontal: 0, vertical: 50),
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: Colors.transparent),
                 borderRadius: BorderRadius.all(Radius.circular(25.0)),
