@@ -35,7 +35,7 @@ class FavoriteModel extends ChangeNotifier {
   }
 
   //Metod för att skifta status på ett objkekt som är favorit samt ta bort från favoritlistan
-  void editFavorite(AlkoObject drink) {
+  void editFavorite(AlkoObject drink) async {
     if (isDrinkInFavorite(drink) == true) {
       drink.isFavorite = false;
       favoriteList.remove(drink);
@@ -45,14 +45,14 @@ class FavoriteModel extends ChangeNotifier {
       } else {
         myInt = drink.idDrink;
       }
-      FavoriteDB.removeFromFavoriteListData(myInt);
-      getFavoriteListData();
+      await FavoriteDB.removeFromFavoriteListData(myInt);
+      await getFavoriteListData();
       myFlutterToast('Removed from favorites');
     } else {
       drink.isFavorite = true;
       favoriteList.add(drink);
-      FavoriteDB.addToFavoriteListData(drink);
-      getFavoriteListData();
+      await FavoriteDB.addToFavoriteListData(drink);
+      await getFavoriteListData();
       myFlutterToast('Added to favorites');
     }
     notifyListeners();

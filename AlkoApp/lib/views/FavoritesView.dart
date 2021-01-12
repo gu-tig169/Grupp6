@@ -62,7 +62,7 @@ class FavoritesView extends StatelessWidget {
     );
   }
 
-  Widget _deleteButton(state, index) {
+  Widget _deleteButton(state, index)  {
     return Positioned(
       right: 15,
       top: 10,
