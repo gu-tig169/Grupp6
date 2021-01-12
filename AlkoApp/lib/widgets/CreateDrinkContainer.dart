@@ -106,7 +106,7 @@ class CreateDrinkContainer extends StatelessWidget {
 
   Widget ingredientList(Map ingredientMap, context) {
     ingredientMap.removeWhere((key, value) =>
-        key == "null" || value == "null" || key == null || value == null);
+         key == "null" || key == null );
 
     return Padding(
       padding: EdgeInsets.fromLTRB(18, 0, 18, 0),

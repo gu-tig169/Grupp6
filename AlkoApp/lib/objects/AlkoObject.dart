@@ -1,4 +1,3 @@
-//Är satt till dynamic,dynamic <-- om krångel ändra till String,dynamic
 //Ett helt AlkoObject, from & to Json
 
 class AlkoObject {
@@ -60,7 +59,6 @@ class AlkoObject {
   bool isFavorite = false;
 
   String get getStrDrink => strDrink;
-  //String get drinkId => drinkId;
 
   bool get getIsFavorite => isFavorite;
 
