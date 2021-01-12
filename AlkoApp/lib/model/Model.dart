@@ -61,7 +61,7 @@ class Model extends ChangeNotifier {
 
   //Mappar ingredienser och measure, används i drinkview & createdrinkcontainer
   Map getDrinkIngredientList(AlkoObject drink) {
-    Map<String, String> parameterList = {
+    Map<String, String> ingredientMap = {
       drink.strIngredient1: drink.strMeasure1,
       drink.strIngredient2: drink.strMeasure2,
       drink.strIngredient3: drink.strMeasure3,
@@ -73,10 +73,10 @@ class Model extends ChangeNotifier {
       drink.strIngredient9: drink.strMeasure9,
     };
 
-    parameterList.removeWhere((String value, String key) => value == null);
-    parameterList.removeWhere((String value, String key) => value == "");
+    ingredientMap.removeWhere((String value, String key) => value == null);
+    ingredientMap.removeWhere((String value, String key) => value == "");
 
-    return parameterList;
+    return ingredientMap;
   }
 
   myFlutterToast(input) {

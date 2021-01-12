@@ -203,7 +203,7 @@ Widget _ingredientsWidget(
   AlkoObject drink,
   context,
 ) {
-  Map<String, String> parameterList =
+  Map<String, String> ingredientMap =
       Provider.of<Model>(context, listen: false).getDrinkIngredientList(drink);
 
   return Column(children: [
@@ -217,7 +217,7 @@ Widget _ingredientsWidget(
         ),
       ),
     ),
-    for (var k in parameterList.keys)
+    for (var k in ingredientMap.keys)
       Container(
         alignment: Alignment.topLeft,
         child: ListTile(
@@ -231,7 +231,7 @@ Widget _ingredientsWidget(
                 fontSize: 20, fontWeight: FontWeight.w700, letterSpacing: 0.3),
           ),
           subtitle: Text(
-            parameterList[k] == null ? "" : "${parameterList[k]}",
+            ingredientMap[k] == null ? "" : "${ingredientMap[k]}",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
         ),

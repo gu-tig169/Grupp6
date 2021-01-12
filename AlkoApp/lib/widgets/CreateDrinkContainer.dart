@@ -8,7 +8,7 @@ class CreateDrinkContainer extends StatelessWidget {
   CreateDrinkContainer(this.drink);
   @override
   Widget build(BuildContext context) {
-    Map<String, String> parameterList =
+    Map<String, String> ingredientMap =
         Provider.of<Model>(context, listen: false)
             .getDrinkIngredientList(drink);
     return GestureDetector(
@@ -23,7 +23,7 @@ class CreateDrinkContainer extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 picContainer(),
-                ingredientList(parameterList, context),
+                ingredientList(ingredientMap, context),
               ],
             ),
           ),
@@ -104,8 +104,8 @@ class CreateDrinkContainer extends StatelessWidget {
     );
   }
 
-  Widget ingredientList(Map parameterList, context) {
-    parameterList.removeWhere((key, value) =>
+  Widget ingredientList(Map ingredientMap, context) {
+    ingredientMap.removeWhere((key, value) =>
         key == "null" || value == "null" || key == null || value == null);
 
     return Padding(
@@ -128,7 +128,7 @@ class CreateDrinkContainer extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.height,
             child: Text(
-              "${parameterList.keys.join(', ')}",
+              "${ingredientMap.keys.join(', ')}",
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
               style: TextStyle(color: Colors.grey, fontSize: 15),
