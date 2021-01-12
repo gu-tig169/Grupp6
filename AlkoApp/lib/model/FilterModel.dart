@@ -95,11 +95,6 @@ class FilterModel extends ChangeNotifier {
     }
   }
 
-  /*
-    var apa = await Provider.of<Model>(context, listen: false)
-        .getSingleObjectByID(178334);
-  */
-
   //Getter för ovan
   getIngredientsList() async {
     _isLoading = true;

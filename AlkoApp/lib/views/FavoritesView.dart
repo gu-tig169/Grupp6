@@ -11,12 +11,11 @@ class FavoritesView extends StatelessWidget {
     return Consumer<FavoriteModel>(
       builder: (context, state, child) => Scaffold(
           backgroundColor: Colors.blueGrey[50],
-
           bottomNavigationBar: CustomNavigationBar(),
           body: Column(
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 40, 20, 5),
+                padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
                 child: Row(
                   children: [
                     Container(

@@ -8,7 +8,7 @@ class CreateDrinkContainer extends StatelessWidget {
   CreateDrinkContainer(this.drink);
   @override
   Widget build(BuildContext context) {
-    Map<String, String> parameterList =
+    Map<String, String> ingredientMap =
         Provider.of<Model>(context, listen: false)
             .getDrinkIngredientList(drink);
     return GestureDetector(
@@ -21,10 +21,9 @@ class CreateDrinkContainer extends StatelessWidget {
           Container(
             width: 210.0,
             child: Column(
-              //alignment: Alignment.topCenter,
               children: <Widget>[
                 picContainer(),
-                ingredientList(parameterList, context),
+                ingredientList(ingredientMap, context),
               ],
             ),
           ),
@@ -105,9 +104,9 @@ class CreateDrinkContainer extends StatelessWidget {
     );
   }
 
-  Widget ingredientList(Map parameterList, context) {
-    parameterList.removeWhere((key, value) =>
-        key == "null" || key == null );
+  Widget ingredientList(Map ingredientMap, context) {
+    ingredientMap.removeWhere((key, value) =>
+         key == "null" || key == null );
 
     return Padding(
       padding: EdgeInsets.fromLTRB(18, 0, 18, 0),
@@ -116,7 +115,6 @@ class CreateDrinkContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            //padding: EdgeInsets.only(top: 30),
             alignment: Alignment.topLeft,
             child: Text(
               'Ingredients',
@@ -130,7 +128,7 @@ class CreateDrinkContainer extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.height,
             child: Text(
-              "${parameterList.keys.join(', ')}",
+              "${ingredientMap.keys.join(', ')}",
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
               style: TextStyle(color: Colors.grey, fontSize: 15),
@@ -141,5 +139,3 @@ class CreateDrinkContainer extends StatelessWidget {
     );
   }
 }
-
-//parameterList[k] == null ? "" : "${parameterList[k]}",
